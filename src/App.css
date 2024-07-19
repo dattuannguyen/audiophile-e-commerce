@@ -1,0 +1,7 @@
+.btn1{
+    @apply  py-[15px] px-[30px] tracking-[1px] font-manropeBold text-white text-[13px] uppercase bg-darkOrange hover:bg-lightOrange  hover:cursor-pointer
+}
+
+.btn2{
+    @apply  py-[15px] px-[30px] tracking-[1px] font-manropeBold text-black text-[13px] uppercase border-black border-[1px] hover:bg-black hover:text-white
+}
