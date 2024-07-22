@@ -8,7 +8,7 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="px-[24px] py-[32px] xl:px-[165px] md:px-[39px] xl:py-[32px] md:py-[32px] text-white">
+            <nav className="px-[24px] py-[32px] xl:px-[165px] md:px-[39px] xl:py-[32px] md:py-[32px] text-white absolute w-full">
                 <div className="flex justify-between pb-[32px] border-b-mateGray border-b-[0.5px] items-center">
                     <div className="xl:hidden">
                         <button onClick={() => setIsOpen(!isOpen)}>
@@ -16,7 +16,7 @@ export default function Navbar() {
                         </button>
                     </div>
                     <div className="md:flex-1">
-                        <img src={logo} alt="Logo" className="md:pl-[40px]" />
+                        <img src={logo} alt="Logo"  className="md:pl-[40px] xl:pl-0"/>
                     </div>
                     <div className="md:shrink-0 hidden xl:block">
                         <ul className="flex flex-grow justify-center items-center gap-8 text-trueWhite font-manropeBold uppercase text-[13px]">
