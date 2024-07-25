@@ -10,7 +10,6 @@ export default function Homepage(){
             <Header/>
             <Products/>
             <Blogs/>
-            <Footer/>
         </>
     )
 }
