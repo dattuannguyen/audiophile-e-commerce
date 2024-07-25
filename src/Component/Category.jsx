@@ -1,7 +1,8 @@
-import React from 'react';
+// import React from 'react';
 import Products from "./Products/Products.jsx";
 import Item from "./Item.jsx";
 
+// eslint-disable-next-line react/prop-types
 const Category = ({title,product}) => {
      return(
         <>
