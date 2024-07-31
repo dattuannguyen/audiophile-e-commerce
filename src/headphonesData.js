@@ -3,12 +3,21 @@
 import XX99Mark2Mobile from "./assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg";
 import XX99Mark2Tablet from "./assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg";
 import XX99Mark2Desktop from "./assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg";
+import XX99Mark2ProductMobile from "./assets/product-xx99-mark-two-headphones/mobile/image-product.jpg";
+import XX99Mark2ProductTablet from "./assets/product-xx99-mark-two-headphones/tablet/image-product.jpg";
+import XX99Mark2ProductDesktop from "./assets/product-xx99-mark-two-headphones/desktop/image-product.jpg";
 import XXMark1Mobile from "./assets/product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg";
 import XXMark1Tablet from "./assets/product-xx99-mark-one-headphones/tablet/image-category-page-preview.jpg";
 import XXMark1Desktop from "./assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg";
+import XX99Mark1ProductMobile from "./assets/product-xx99-mark-one-headphones/mobile/image-product.jpg";
+import XX99Mark1ProductTablet from "./assets/product-xx99-mark-one-headphones/tablet/image-product.jpg";
+import XX99Mark1ProductDesktop from "./assets/product-xx99-mark-one-headphones/desktop/image-product.jpg";
 import XX59Mobile from "./assets/product-xx59-headphones/mobile/image-category-page-preview.jpg";
 import XX59Tablet from "./assets/product-xx59-headphones/tablet/image-category-page-preview.jpg";
 import XX59Desktop from "./assets/product-xx59-headphones/desktop/image-category-page-preview.jpg";
+import XX59ProductMobile from "./assets/product-xx59-headphones/mobile/image-product.jpg";
+import XX59ProductTablet from "./assets/product-xx59-headphones/tablet/image-product.jpg";
+import XX59ProductDesktop from "./assets/product-xx59-headphones/desktop/image-product.jpg";
 
 const Headphones = [
     {
@@ -19,6 +28,10 @@ const Headphones = [
         imageMobile: XX99Mark2Mobile,
         imageTablet: XX99Mark2Tablet,
         imageDesktop: XX99Mark2Desktop,
+        imageProductMobile:XX99Mark2ProductMobile,
+        imageProductTablet:XX99Mark2ProductTablet,
+        imageProductDesktop:XX99Mark2ProductDesktop,
+
         new:"New Product",
         price: "2,999",
         features: [
@@ -40,6 +53,9 @@ const Headphones = [
         imageMobile: XXMark1Mobile,
         imageTablet: XXMark1Tablet,
         imageDesktop: XXMark1Desktop,
+        imageProductMobile:XX99Mark1ProductMobile,
+        imageProductTablet:XX99Mark1ProductTablet,
+        imageProductDesktop:XX99Mark1ProductDesktop,
         price: "1,750",
         features: [
             "As the headphones all others are measured against, the XX99 Mark I demonstrates over five decades of audio expertise, redefining the critical listening experience. This pair of closed-back headphones are made of industrial, aerospace-grade materials to emphasize durability at a relatively light weight of 11 oz. ",
@@ -59,6 +75,9 @@ const Headphones = [
         imageMobile: XX59Mobile,
         imageTablet: XX59Tablet,
         imageDesktop: XX59Desktop,
+        imageProductMobile:XX59ProductMobile,
+        imageProductTablet:XX59ProductTablet,
+        imageProductDesktop:XX59ProductDesktop,
         price: "1500",
         features: [
             "These headphones have been created from durable, high-quality materials tough enough to take anywhere. Its compact folding design fuses comfort and minimalist style making it perfect for travel. Flawless transmission is assured by the latest wireless technology engineered for audio synchronization with videos.",

@@ -1,6 +1,9 @@
 import YX1Mobile from './assets/product-yx1-earphones/mobile/image-category-page-preview.jpg';
 import YX1Tablet from "./assets/product-yx1-earphones/tablet/image-category-page-preview.jpg";
 import YX1Desktop from "./assets/product-yx1-earphones/desktop/image-category-page-preview.jpg";
+import YX1ProductMobile from "./assets/product-yx1-earphones/mobile/image-product.jpg";
+import YX1ProductTablet from "./assets/product-yx1-earphones/tablet/image-product.jpg";
+import YX1ProductDesktop from "./assets/product-yx1-earphones/desktop/image-product.jpg";
 
 const Earphones = [
     {
@@ -10,6 +13,9 @@ const Earphones = [
         imageMobile: YX1Mobile,
         imageTablet: YX1Tablet,
         imageDesktop: YX1Desktop,
+        imageProductMobile:YX1ProductMobile,
+        imageProductTablet:YX1ProductTablet,
+        imageProductDesktop:YX1ProductDesktop,
         price :"599",
         features:[
             "Experience unrivalled stereo sound thanks to innovative acoustic technology. With improved ergonomics designed for full day wearing, these revolutionary earphones have been finely crafted to provide you with the perfect fit, delivering complete comfort all day long while enjoying exceptional noise isolation and truly immersive sound.",

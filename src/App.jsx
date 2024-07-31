@@ -4,15 +4,17 @@ import Navbar from "./Component/Navbar.jsx";
 import {Routes,Route} from "react-router-dom";
 import Category from "./Component/Category.jsx";
 import ProductDetails from "./Component/ProductDetails.jsx";
+import Footer from "./Component/Footer.jsx";
+import IntroductionSection from "./Component/IntroductionSection.jsx";
+import ScrollToTop from "./Component/ScrollToTop.jsx";
+
 import Headphones from "./headphonesData.js"
 import Speakers from "./speakersData.js";
 import Earphones from "./earphonesData.js";
-import Footer from "./Component/Footer.jsx";
-import IntroductionSection from "./Component/IntroductionSection.jsx";
-
 function App() {
   return (
     <>
+        <ScrollToTop/>
         <Navbar/>
         <Routes>
             <Route path="/" element={<Homepage/>} />

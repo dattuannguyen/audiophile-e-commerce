@@ -1,9 +1,16 @@
 import ZX9Mobile from './assets/product-zx9-speaker/mobile/image-category-page-preview.jpg';
 import ZX9Tablet from './assets/product-zx9-speaker/tablet/image-category-page-preview.jpg';
 import ZX9Desktop from './assets/product-zx9-speaker/desktop/image-category-page-preview.jpg';
+import ZX9ProductMobile from './assets/product-zx9-speaker/mobile/image-product.jpg';
+import ZX9ProductTablet from './assets/product-zx9-speaker/tablet/image-product.jpg';
+import ZX9ProductDesktop from './assets/product-zx9-speaker/desktop/image-product.jpg';
+
 import ZX7Mobile from './assets/product-zx7-speaker/mobile/image-category-page-preview.jpg';
 import ZX7Tablet from './assets/product-zx7-speaker/tablet/image-category-page-preview.jpg';
 import ZX7Desktop from "./assets/product-zx7-speaker/desktop/image-category-page-preview.jpg";
+import ZX7ProductMobile from './assets/product-zx7-speaker/mobile/image-product.jpg';
+import ZX7ProductTablet from './assets/product-zx7-speaker/tablet/image-product.jpg';
+import ZX7ProductDesktop from './assets/product-zx7-speaker/desktop/image-product.jpg';
 
 const Speakers = [
     {
@@ -13,6 +20,9 @@ const Speakers = [
         imageMobile: ZX9Mobile,
         imageTablet: ZX9Tablet,
         imageDesktop: ZX9Desktop,
+        imageProductMobile:ZX9ProductMobile,
+        imageProductTablet:ZX9ProductTablet,
+        imageProductDesktop:ZX9ProductDesktop,
         new:"New Product",
         price: "4,500",
         features:[
@@ -35,6 +45,9 @@ const Speakers = [
         imageMobile: ZX7Mobile,
         imageTablet: ZX7Tablet,
         imageDesktop: ZX7Desktop,
+        imageProductMobile:ZX7ProductMobile,
+        imageProductTablet:ZX7ProductTablet,
+        imageProductDesktop:ZX7ProductDesktop,
         price: "3,500",
         features: [
             "Reap the advantages of a flat diaphragm tweeter cone. This provides a fast response rate and excellent high frequencies that lower tiered bookshelf speakers cannot provide. The woofers are made from aluminum that produces a unique and clear sound. XLR inputs allow you to connect to a mixer for more advanced usage.",

@@ -2,6 +2,7 @@ import logo from "../assets/shared/desktop/logo.svg"
 import facebook from "../assets/shared/desktop/icon-facebook.svg"
 import twitter from "../assets/shared/desktop/icon-twitter.svg"
 import insta from "../assets/shared/desktop/icon-instagram.svg"
+import {Link} from "react-router-dom";
 
 export default function Footer(){
     return(
@@ -10,10 +11,10 @@ export default function Footer(){
                 <div className="pt-[52px] md:pt-[60px] md:px-[39px] xl:pt-[75px] xl:px-[165px] flex flex-col xl:flex-row justify-center items-center md:justify-items-start md:items-start xl:justify-between md:gap-[32px] gap-[48px] ">
                     <img src={logo} alt="" className="w-[143px] h-[25px]"/>
                     <ul className="flex flex-col md:flex-row font-manropeBold text-[13px] tracking-[2px] uppercase gap-[16px] md:gap-[34px]">
-                        <li className="cursor-pointer hover:text-darkOrange">Home</li>
-                        <li className="cursor-pointer hover:text-darkOrange">Headphones</li>
-                        <li className="cursor-pointer hover:text-darkOrange">Speakers</li>
-                        <li className="cursor-pointer hover:text-darkOrange">Earphones</li>
+                        <Link to="/" className="cursor-pointer hover:text-darkOrange">Home</Link>
+                        <Link to="/headphones" className="cursor-pointer hover:text-darkOrange">Headphones</Link>
+                        <Link to="/speakers" className="cursor-pointer hover:text-darkOrange">Speakers</Link>
+                        <Link to="/earphones" className="cursor-pointer hover:text-darkOrange">Earphones</Link>
                     </ul>
                 </div>
                 <div className="pt-[48px] px-[24px] md:pt-[32px] md:px-[39px] xl:pt-[36px] xl:px-[165px]">
