@@ -1,12 +1,21 @@
 // src/Component/ProductDetail.jsx
 
-import React from 'react';
 import { useParams } from 'react-router-dom';
 import Products from "./Products/Products.jsx";
+import {useState} from "react";
 
 const ProductDetails = ({ products }) => {
     const { productId } = useParams();
     const product = products.find(p => p.id === productId);
+
+    const [numberOfProduct, setNumberOfProduct] = useState(1);
+    const decrease = () => {
+        if (numberOfProduct === 0) return;
+        setNumberOfProduct(numberOfProduct - 1);
+    };
+    const increase = () => {
+        setNumberOfProduct(numberOfProduct + 1);
+    };
 
     if (!product) {
         return <div>Product not found</div>;
@@ -33,7 +42,14 @@ const ProductDetails = ({ products }) => {
                             <p className="font-manropeBold text-[29px] tracking-[1px] w-[327px] uppercase">{product.name}</p>
                             <p className="text-black text-[15px] leading-[25px] font-manropeMedium opacity-[50%] pt-[24px]">{product.description}</p>
                             <p className="font-manropeBold text-[18px]  tracking-[1.29px] w-[327px] pt-[24px]">$ {product.price}</p>
-                            <button className="btn1 mt-[24px]">Add to Cart</button>
+                            <div className="mt-[24px] flex gap-[16px]">
+                                <div className="flex justify-center items-center gap-[21px] btn3">
+                                    <button className="text-black opacity-25 hover:text-darkOrange hover:opacity-100" onClick={decrease}> - </button>
+                                    <p>{numberOfProduct}</p>
+                                    <button className="text-black opacity-25 hover:text-darkOrange hover:opacity-100" onClick={increase}>+</button>
+                                </div>
+                                 <button className="btn1 ">Add to Cart</button>
+                            </div>
                         </div>
                     </div>
                     <div className="flex flex-col xl:flex-row xl:justify-between">

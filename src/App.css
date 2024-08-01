@@ -5,3 +5,7 @@
 .btn2{
     @apply  py-[15px] px-[30px] tracking-[1px] font-manropeBold text-black text-[13px] uppercase border-black border-[1px] hover:bg-black hover:text-white
 }
+
+.btn3{
+    @apply  py-[15px] px-[30px] tracking-[1px] font-manropeBold text-black text-[13px] uppercase border-none bg-matteGray border-[1px]
+}
