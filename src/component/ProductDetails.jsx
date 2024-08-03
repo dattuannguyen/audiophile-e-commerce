@@ -1,32 +1,48 @@
 // src/Component/ProductDetail.jsx
 
 import { useParams } from 'react-router-dom';
-import Products from "./Products/Products.jsx";
-import {useState} from "react";
+import Products from "./products/Products.jsx";
+import {useContext, useState} from "react";
+import CartContext from "../context/CartContext.jsx";
 
 const ProductDetails = ({ products }) => {
     const { productId } = useParams();
     const product = products.find(p => p.id === productId);
 
-    const [numberOfProduct, setNumberOfProduct] = useState(1);
+    const [quantity, setQuantity] = useState(1);
+    const {addToCart}  = useContext(CartContext)
     const decrease = () => {
-        if (numberOfProduct === 0) return;
-        setNumberOfProduct(numberOfProduct - 1);
+        if (quantity === 0) return;
+        setQuantity(quantity - 1);
     };
     const increase = () => {
-        setNumberOfProduct(numberOfProduct + 1);
+        setQuantity(quantity + 1);
     };
+
+    const formatPrice = (price) => {
+        return price.toLocaleString('en-US', { style: 'currency', currency: 'USD' }).replace(/\.00$/, '');
+    };
+    const handleAddToCart = () => {
+        const item = {
+            ...product,
+            quantity: quantity,
+        };
+        addToCart(item);
+    };
+
 
     if (!product) {
         return <div>Product not found</div>;
     }
+
+
 
     return (
         <>
             <div className="product-detail">
                 <div  className="h-[88px] bg-black "></div>
                 <div className="mx-[24px] md:mx-[39px] xl:mx-[165px]">
-                    <button className="my-[24px] font-manropeMedium font-[15px] opacity-[50%]" onClick={() => window.history.back()}>Go Back</button>
+                    <button className="my-[24px] font-manropeMedium font-[15px] opacity-[50%] " onClick={() => window.history.back()}>Go Back</button>
                     <div className="flex flex-col md:grid md:grid-cols-2 md:gap-[69px]">
                         <div>
                             <img src={product.imageProductMobile} alt="" className="w-full h-[352px] object-cover mb-4 md:hidden" />
@@ -41,14 +57,14 @@ const ProductDetails = ({ products }) => {
                             }
                             <p className="font-manropeBold text-[29px] tracking-[1px] w-[327px] uppercase">{product.name}</p>
                             <p className="text-black text-[15px] leading-[25px] font-manropeMedium opacity-[50%] pt-[24px]">{product.description}</p>
-                            <p className="font-manropeBold text-[18px]  tracking-[1.29px] w-[327px] pt-[24px]">$ {product.price}</p>
+                            <p className="font-manropeBold text-[18px]  tracking-[1.29px] w-[327px] pt-[24px]">{formatPrice(product.price)}</p>
                             <div className="mt-[24px] flex gap-[16px]">
                                 <div className="flex justify-center items-center gap-[21px] btn3">
                                     <button className="text-black opacity-25 hover:text-darkOrange hover:opacity-100" onClick={decrease}> - </button>
-                                    <p>{numberOfProduct}</p>
+                                    <p>{quantity}</p>
                                     <button className="text-black opacity-25 hover:text-darkOrange hover:opacity-100" onClick={increase}>+</button>
                                 </div>
-                                 <button className="btn1 ">Add to Cart</button>
+                                 <button className="btn1 " onClick={handleAddToCart}>Add to Cart</button>
                             </div>
                         </div>
                     </div>

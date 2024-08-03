@@ -1,9 +1,9 @@
 // import React from 'react';
-import Products from "./Products/Products.jsx";
-import Item from "./Item.jsx";
+import Products from "../component/products/Products.jsx";
+import Item from "../component/Item.jsx";
 
 // eslint-disable-next-line react/prop-types
-const Category = ({title,product}) => {
+const CategoryPage = ({title,product}) => {
      return(
         <>
             <div className="h-[192px] md:h-[336px] flex justify-center pt-[122px] md:pt-[195px] bg-black ">
@@ -18,4 +18,4 @@ const Category = ({title,product}) => {
      );
 }
 
-export default Category;
+export default CategoryPage;
