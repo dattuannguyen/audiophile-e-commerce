@@ -20,8 +20,8 @@ const CartBox = () => {
     };
 
     return (
-        <div className="absolute top-[80px] xl:left-0 w-[377px] h-fit bg-matteWhite z-50 px-[28px] py-[32px] m-[24px] rounded-lg">
-            <div className="flex justify-between items-center">
+        <div className="absolute top-[80px] md:right-0 md:w-[377px] h-fit bg-matteWhite z-50 px-[28px] py-[32px] mx-7 md:mx-[39px] xl:mx-[165px] md:mt-3  rounded-lg  ">
+            <div className="flex justify-between items-cente ">
                 <h2 className="font-manropeBold text-[18px] uppercase tracking-[1.28px]">Cart ({cartItems.length})</h2>
                 <button className="font-manropeMedium text-[15px] leading-[25px] opacity-50" onClick={clearCart}>Remove all</button>
             </div>

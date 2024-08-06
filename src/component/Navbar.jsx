@@ -1,24 +1,23 @@
 import cart from "/src/assets/shared/desktop/icon-cart.svg";
 import logo from "/src/assets/shared/desktop/logo.svg";
-import { useState } from "react";
+import {useContext, useState} from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from 'react-router-dom';
 import CartBox from "./CartBox.jsx";
+import CartContext from "../context/CartContext.jsx";
 
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-    const [isCartOpen, setIsCartOpen] = useState(false);
+    // const [isCartOpen, setIsCartOpen] = useState(false);
+    const {toggleCartBox} = useContext(CartContext)
     const closeNavbar = () => {
         setIsOpen(false);
-    };
-    const toggleCartBox = () => {
-        setIsCartOpen(!isCartOpen);
     };
 
     return (
         <>
-            <nav className="px-[24px] py-[32px] xl:px-[165px] md:px-[39px] xl:py-[32px] md:py-[32px] text-white absolute w-full">
+            <nav className=" px-[24px] py-[32px] xl:px-[165px] md:px-[39px] xl:py-[32px] md:py-[32px] text-white absolute w-full z-50">
                 <div className="flex justify-between pb-[32px] border-b-mateGray border-b-[0.5px] items-center">
                     <div className="xl:hidden">
                         <button onClick={() => setIsOpen(!isOpen)}>
@@ -55,7 +54,6 @@ export default function Navbar() {
                     </div>
                 )}
             </nav>
-            {isCartOpen && <CartBox />}
         </>
     );
 }

@@ -9,3 +9,25 @@
 .btn3{
     @apply  py-[15px] px-[30px] tracking-[1px] font-manropeBold text-black text-[13px] uppercase border-none bg-matteGray border-[1px]
 }
+
+/* Overlay effect */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 40; /* Should be below the cart but above the rest of the content */
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
+
+/* Blur effect */
+.blur-content {
+    filter: blur(4px);
+}

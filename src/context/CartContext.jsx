@@ -34,13 +34,18 @@
 //
 // export default CartContext;
 
-import React, { createContext, useState } from 'react';
+import  { createContext, useState } from 'react';
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
+    const [isCartOpen, setIsCartOpen] = useState(false);
 
+    const toggleCartBox = () => {
+        setIsCartOpen(!isCartOpen);
+        console.log("check")
+    };
     const addToCart = (item) => {
         setCartItems(prevItems => {
             const existingItem = prevItems.find(cartItem => cartItem.id === item.id);
@@ -66,7 +71,7 @@ export const CartProvider = ({ children }) => {
     };
 
     return (
-        <CartContext.Provider value={{ cartItems, addToCart, updateCartItemQuantity, clearCart }}>
+        <CartContext.Provider value={{ cartItems, addToCart, updateCartItemQuantity, clearCart,toggleCartBox, isCartOpen }}>
             {children}
         </CartContext.Provider>
     );
