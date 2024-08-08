@@ -6,7 +6,7 @@ import bestGear from "../assets/shared/desktop/image-best-gear.jpg";
 const IntroductionSection = (props) => {
     return(
         <>
-            <div className="relative xl:pt-[200px] pt-[120px]  flex flex-col xl:flex-row justify-between xl:gap-[125px] mx-[39px] xl:mx-[165px] ">
+            <div className="relative xl:mb-[200px] md:mb-[96px] mb-[120px]  xl:pt-[200px] pt-[120px]  flex flex-col xl:flex-row justify-between xl:gap-[125px] mx-[39px] xl:mx-[165px] ">
                 <img src={bestGearMobile} alt="" className="block sm:hidden "/>
                 <img src={bestGearTablet} alt="" className="hidden sm:block xl:hidden"/>
                 <div className=" xl:pt-[147px] md:pt-[63px] pt-[40px] flex flex-col text-center xl:text-start items-center xl:items-start justify-center  ">

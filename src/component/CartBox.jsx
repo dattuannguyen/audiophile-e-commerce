@@ -1,6 +1,7 @@
 
 import { useContext } from 'react';
 import CartContext from "../context/CartContext.jsx";
+import {Link} from "react-router-dom";
 
 const CartBox = () => {
     const { cartItems, clearCart, updateCartItemQuantity } = useContext(CartContext);
@@ -20,7 +21,7 @@ const CartBox = () => {
     };
 
     return (
-        <div className="absolute top-[80px] md:right-0 md:w-[377px] h-fit bg-matteWhite z-50 px-[28px] py-[32px] mx-7 md:mx-[39px] xl:mx-[165px] md:mt-3  rounded-lg  ">
+        <div className="absolute top-[80px] mx-7 w-[327px] md:right-0 md:w-[377px] h-fit bg-matteWhite z-50 px-[28px] py-[32px] md:mx-[39px] xl:mx-[165px] md:mt-3  rounded-lg  ">
             <div className="flex justify-between items-cente ">
                 <h2 className="font-manropeBold text-[18px] uppercase tracking-[1.28px]">Cart ({cartItems.length})</h2>
                 <button className="font-manropeMedium text-[15px] leading-[25px] opacity-50" onClick={clearCart}>Remove all</button>
@@ -44,13 +45,13 @@ const CartBox = () => {
                     </li>
                 ))}
             </ul>
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center mb-[24px]">
                 <p className="font-manropeMedium uppercase opacity-50 text-[15px]">Total</p>
                 <p className="font-manropeBold text-[18px]">
                     {formatPrice(cartItems.reduce((total, item) => total + item.price * item.quantity, 0))}
                 </p>
             </div>
-            <button className="btn1 w-full mt-[24px]">Checkout</button>
+            <Link to="/checkout" className="btn1 w-full ">Checkout</Link>
         </div>
     );
 };

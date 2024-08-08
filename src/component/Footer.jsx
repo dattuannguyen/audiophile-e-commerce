@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 export default function Footer(){
     return(
         <>
-            <div className="relative xl:mt-[200px] md:mt-[96px] mt-[120px] xl:h-[365px] md:h-[400px] h-[654px] bg-matteBlack text-white">
+            <div className="relative xl:h-[365px] md:h-[400px] h-[654px] bg-matteBlack text-white">
                 <div className="pt-[52px] md:pt-[60px] md:px-[39px] xl:pt-[75px] xl:px-[165px] flex flex-col xl:flex-row justify-center items-center md:justify-items-start md:items-start xl:justify-between md:gap-[32px] gap-[48px] ">
                     <img src={logo} alt="" className="w-[143px] h-[25px]"/>
                     <ul className="flex flex-col md:flex-row font-manropeBold text-[13px] tracking-[2px] uppercase gap-[16px] md:gap-[34px]">

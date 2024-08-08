@@ -1,11 +1,12 @@
 // src/Component/ProductDetail.jsx
 
 import { useParams } from 'react-router-dom';
-import Products from "./products/Products.jsx";
+import Products from "../component/products/Products.jsx";
 import {useContext, useState} from "react";
 import CartContext from "../context/CartContext.jsx";
+import IntroductionSection from "../component/IntroductionSection.jsx";
 
-const ProductDetails = ({ products }) => {
+const ProductsDetailsPage = ({ products }) => {
     const { productId } = useParams();
     const product = products.find(p => p.id === productId);
 
@@ -91,10 +92,12 @@ const ProductDetails = ({ products }) => {
                 </div>
             </div>
             <Products/>
+            <IntroductionSection />
+
         </>
 
 
     );
 };
 
-export default ProductDetails;
+export default ProductsDetailsPage;

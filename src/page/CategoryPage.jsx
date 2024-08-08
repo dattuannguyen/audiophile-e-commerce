@@ -1,6 +1,7 @@
 // import React from 'react';
 import Products from "../component/products/Products.jsx";
 import Item from "../component/Item.jsx";
+import IntroductionSection from "../component/IntroductionSection.jsx";
 
 // eslint-disable-next-line react/prop-types
 const CategoryPage = ({title,product}) => {
@@ -13,6 +14,7 @@ const CategoryPage = ({title,product}) => {
                 <Item items={product}/>
             </div>
             <Products/>
+            <IntroductionSection />
 
         </>
      );

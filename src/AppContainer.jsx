@@ -3,15 +3,15 @@ import { Routes, Route } from 'react-router-dom';
 import Homepage from "./page/Homepage.jsx";
 import Navbar from "./component/Navbar.jsx";
 import CategoryPage from "./page/CategoryPage.jsx";
-import ProductDetails from "./component/ProductDetails.jsx";
+import ProductsDetailsPage from "./page/ProductsDetailsPage.jsx";
 import Footer from "./component/Footer.jsx";
-import IntroductionSection from "./component/IntroductionSection.jsx";
 import ScrollToTop from "./component/ScrollToTop.jsx";
 import CartContext from "./context/CartContext.jsx";
 import Headphones from "./data/headphonesData.js";
 import Speakers from "./data/speakersData.js";
 import Earphones from "./data/earphonesData.js";
 import CartBox from './component/CartBox.jsx';
+import CheckoutPage from "./page/CheckoutPage.jsx";
 
 const AppContainer = () => {
     const { isCartOpen, toggleCart } = useContext(CartContext);
@@ -27,11 +27,13 @@ const AppContainer = () => {
                     <Route path="/headphones" element={<CategoryPage title="Headphones" product={Headphones} />} />
                     <Route path="/speakers" element={<CategoryPage title="Speaker" product={Speakers} />} />
                     <Route path="/earphones" element={<CategoryPage title="Earphones" product={Earphones} />} />
-                    <Route path="/product/:productId" element={<ProductDetails products={[...Headphones, ...Speakers, ...Earphones]} />} />
+                    <Route path="/product/:productId" element={<ProductsDetailsPage products={[...Headphones, ...Speakers, ...Earphones]} />} />
+                    <Route path="/checkout" element={<CheckoutPage/>}/>
                 </Routes>
-                <IntroductionSection />
-                <Footer />
+                {/*<IntroductionSection />*/}
             </div>
+            <Footer />
+
             {isCartOpen && <CartBox />}
         </>
     );
