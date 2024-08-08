@@ -5,14 +5,18 @@ import CartContext from "../context/CartContext.jsx";
 import * as Form from '@radix-ui/react-form';
 import * as RadioGroup from '@radix-ui/react-radio-group';
 import cashOnImg from "../assets/checkout/icon-cash-on-delivery.svg"
+import ConfirmBox from "../component/ConfirmBox.jsx";
+
 const CheckoutPage = () => {
-    const {cartItems} = useContext(CartContext)
+    const {cartItems,shippingPrice,totalPrice,vatAmount,grandTotal} = useContext(CartContext)
     const [eleNumber,setEleNumber] = useState(false)
     const [cashOn,setCashOn]= useState(false)
 
+    const [showConfirm, setShowConfirm] = useState(false); // State to control confirmation component visibility
 
-    const shippingPrice = 50;
-    const vatRate = 20; // Assuming a 20% VAT rate
+    const openConfirmBox = () => {
+        setShowConfirm(true);
+    };
 
     const handleENumber = () => {
         setEleNumber(true);
@@ -27,25 +31,14 @@ const CheckoutPage = () => {
     const formatPrice = (price) => {
         return price.toLocaleString('en-US', { style: 'currency', currency: 'USD' }).replace(/\.00$/, '');
     };
-
     // Function to calculate VAT
-    const calculateVAT = (totalPrice) => {
-        return totalPrice * (vatRate / 100);
-    };
 
-    // Calculate total price of items in the cart
-    const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
-    // Calculate VAT
-    const vatAmount = calculateVAT(totalPrice);
 
-    // Calculate Grand Total
-    const grandTotal = totalPrice + shippingPrice + vatAmount;
     return (
         <>
             <div className="bg-matteGray h-fit ">
                 <div className="h-[90px] bg-black"></div>
-                <div className="">
                     <div className="main mx-[24px] md:mx-[39px] xl:mx-[165px] pb-5 ">
                         <div>
                             <button className="my-[16px] font-manropeMedium font-[15px] opacity-[50%] " onClick={() => window.history.back()}>Go Back</button>
@@ -62,6 +55,9 @@ const CheckoutPage = () => {
                                                     <Form.Field className="grid mb-[10px]" name="email">
                                                         <div className="flex items-baseline justify-between">
                                                             <Form.Label className=" text-black text-[15px] font-medium leading-[35px]">Name</Form.Label>
+                                                            <Form.Message className="text-[13px] text-darkOrange opacity-[0.8]" match="valueMissing">
+                                                                Please enter your name
+                                                            </Form.Message>
                                                         </div>
                                                         <Form.Control asChild>
                                                             <input
@@ -82,6 +78,9 @@ const CheckoutPage = () => {
                                                             <Form.Message className="text-[13px] text-darkOrange opacity-[0.8]" match="typeMismatch">
                                                                 Wrong format
                                                             </Form.Message>
+                                                            <Form.Message className="text-[13px] text-darkOrange opacity-[0.8]" match="valueMissing">
+                                                                Please enter your password
+                                                            </Form.Message>
                                                         </div>
                                                         <Form.Control asChild>
                                                             <input
@@ -100,6 +99,9 @@ const CheckoutPage = () => {
                                                     <Form.Field className="grid mb-[10px]" name="email">
                                                         <div className="flex items-baseline justify-between">
                                                             <Form.Label className=" text-black text-[15px] font-medium leading-[35px]">Phone Number</Form.Label>
+                                                            <Form.Message className="text-[13px] text-darkOrange opacity-[0.8]" match="valueMissing">
+                                                                Please enter your phone number
+                                                            </Form.Message>
                                                         </div>
                                                         <Form.Control asChild>
                                                             <input
@@ -122,6 +124,9 @@ const CheckoutPage = () => {
                                                 <Form.Field className="grid mb-[10px]" name="email">
                                                     <div className="flex items-baseline justify-between">
                                                         <Form.Label className=" text-black text-[15px] font-medium leading-[35px]">Address</Form.Label>
+                                                        <Form.Message className="text-[13px] text-darkOrange opacity-[0.8]" match="valueMissing">
+                                                            Please enter your address
+                                                        </Form.Message>
                                                     </div>
                                                     <Form.Control asChild>
                                                         <input
@@ -140,6 +145,9 @@ const CheckoutPage = () => {
                                                     <Form.Field className="grid mb-[10px]" name="email">
                                                         <div className="flex items-baseline justify-between">
                                                             <Form.Label className=" text-black text-[15px] font-medium leading-[35px] " >ZIP Code</Form.Label>
+                                                            <Form.Message className="text-[13px] text-darkOrange opacity-[0.8]" match="valueMissing">
+                                                                ZIP code
+                                                            </Form.Message>
                                                         </div>
                                                         <Form.Control asChild>
                                                             <input
@@ -159,6 +167,9 @@ const CheckoutPage = () => {
                                                     <Form.Field className="grid mb-[10px]" name="email">
                                                         <div className="flex items-baseline justify-between">
                                                             <Form.Label className=" text-black text-[15px] font-medium leading-[35px]">City</Form.Label>
+                                                            <Form.Message className="text-[13px] text-darkOrange opacity-[0.8]" match="valueMissing">
+                                                                Please enter your city
+                                                            </Form.Message>
                                                         </div>
                                                         <Form.Control asChild>
                                                             <input
@@ -176,6 +187,9 @@ const CheckoutPage = () => {
                                                     <Form.Field className="grid mb-[10px]" name="email">
                                                         <div className="flex items-baseline justify-between">
                                                             <Form.Label className=" text-black text-[15px] font-medium leading-[35px]">Country</Form.Label>
+                                                            <Form.Message className="text-[13px] text-darkOrange opacity-[0.8]" match="valueMissing">
+                                                                Please enter your country
+                                                            </Form.Message>
                                                         </div>
                                                         <Form.Control asChild>
                                                             <input
@@ -236,6 +250,9 @@ const CheckoutPage = () => {
                                                         <Form.Field className="grid mb-[10px]" name="e-number">
                                                             <div className="flex items-baseline justify-between">
                                                                 <Form.Label className=" text-black text-[15px] font-medium leading-[35px] " >e-Money Number</Form.Label>
+                                                                <Form.Message className="text-[13px] text-darkOrange opacity-[0.8]" match="valueMissing">
+                                                                    Please enter your e-money number
+                                                                </Form.Message>
                                                             </div>
                                                             <Form.Control asChild>
                                                                 <input
@@ -255,6 +272,9 @@ const CheckoutPage = () => {
                                                         <Form.Field className="grid mb-[10px]" name="e-pin">
                                                             <div className="flex items-baseline justify-between">
                                                                 <Form.Label className=" text-black text-[15px] font-medium leading-[35px]">e-Money PIN</Form.Label>
+                                                                <Form.Message className="text-[13px] text-darkOrange opacity-[0.8]" match="valueMissing">
+                                                                    Please enter your e-money PIN
+                                                                </Form.Message>
                                                             </div>
                                                             <Form.Control asChild>
                                                                 <input
@@ -327,15 +347,14 @@ const CheckoutPage = () => {
                                             {formatPrice(grandTotal)}
                                         </p>
                                     </div>
-                                    <button className="btn1 w-full">Continue & Pay</button>
+                                    <button  onClick={openConfirmBox}  className="btn1 w-full">Continue & Pay</button>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
 
+            {showConfirm && <ConfirmBox/>}
         </>
     );
 };

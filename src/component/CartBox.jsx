@@ -4,7 +4,7 @@ import CartContext from "../context/CartContext.jsx";
 import {Link} from "react-router-dom";
 
 const CartBox = () => {
-    const { cartItems, clearCart, updateCartItemQuantity } = useContext(CartContext);
+    const { cartItems, clearCart, updateCartItemQuantity,closeCartBox } = useContext(CartContext);
 
     const formatPrice = (price) => {
         return price.toLocaleString('en-US', { style: 'currency', currency: 'USD' }).replace(/\.00$/, '');
@@ -51,7 +51,7 @@ const CartBox = () => {
                     {formatPrice(cartItems.reduce((total, item) => total + item.price * item.quantity, 0))}
                 </p>
             </div>
-            <Link to="/checkout" className="btn1 w-full ">Checkout</Link>
+            <Link to="/checkout" className="btn1 w-full " onClick={closeCartBox}>Checkout</Link>
         </div>
     );
 };

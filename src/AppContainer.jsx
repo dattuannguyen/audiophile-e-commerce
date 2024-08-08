@@ -14,7 +14,7 @@ import CartBox from './component/CartBox.jsx';
 import CheckoutPage from "./page/CheckoutPage.jsx";
 
 const AppContainer = () => {
-    const { isCartOpen, toggleCart } = useContext(CartContext);
+    const { isCartOpen, toggleCart} = useContext(CartContext);
 
     return (
         <>
@@ -30,11 +30,11 @@ const AppContainer = () => {
                     <Route path="/product/:productId" element={<ProductsDetailsPage products={[...Headphones, ...Speakers, ...Earphones]} />} />
                     <Route path="/checkout" element={<CheckoutPage/>}/>
                 </Routes>
-                {/*<IntroductionSection />*/}
             </div>
             <Footer />
 
             {isCartOpen && <CartBox />}
+
         </>
     );
 };
