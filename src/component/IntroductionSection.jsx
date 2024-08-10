@@ -17,7 +17,7 @@ const IntroductionSection = (props) => {
                         Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.
                     </p>
                 </div>
-                <img src={bestGear} alt="" className="rounded-lg hidden xl:block"/>
+                <img src={bestGear} alt="" className="hidden rounded-lg xl:block"/>
             </div>
         </>
     )

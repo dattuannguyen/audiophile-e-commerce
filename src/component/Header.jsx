@@ -10,7 +10,7 @@ export default function Header (){
                             <p className="text-trueWhite text-[36px] md:text-[56px] tracking-[2px] leading-[58px] font-manropeBold uppercase w-[396px]">XX99 MarkII Headphones</p>
                             <p className="text-[15px] w-[328px] md:w-[349px] font-manropeMedium  text-white opacity-[75%] leading-[25px]">Experience natural, lifelike audio and exceptional
                                 build quality made for the passionate music enthusiast</p>
-                            <Link to="/product/xx99-mark-ii" className="btn1 mt-2">See Product</Link>
+                            <Link to="/product/xx99-mark-ii" className="mt-2 btn1">See Product</Link>
                         </div>
                 </div>
             </div>

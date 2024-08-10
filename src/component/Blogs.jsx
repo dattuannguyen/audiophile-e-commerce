@@ -29,7 +29,7 @@ export default function Blogs(){
                 <div className="relative xl:mt-12 md:mt-[32px] mt-[32px] h-[320px] xl:bg-zx7 md:bg-zx7-tablet bg-zx7-mobile bg-cover bg-center rounded-lg">
                     <div className="relative pt-[101px] pl-[24px] md:pl-[95px]">
                         <h1 className="text-[28px] font-manropeBold tracking-[2px] uppercase mb-[32px]">ZX7 Speaker</h1>
-                        <Link to="/product/zx7-speaker" className="btn2  ">See Product</Link>
+                        <Link to="/product/zx7-speaker" className="btn2 ">See Product</Link>
                     </div>
                 </div>
                 {/*blog3*/}

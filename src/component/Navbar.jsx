@@ -29,7 +29,7 @@ export default function Navbar() {
                             <img src={logo} alt="Logo"  className="md:pl-[40px] xl:pl-0"/>
                         </Link>
                     </div>
-                    <div className="md:shrink-0 hidden xl:block">
+                    <div className="hidden md:shrink-0 xl:block">
                         <ul className="flex flex-grow justify-center items-center gap-8 text-trueWhite font-manropeBold uppercase text-[13px]">
                             <Link to="/" className="hover:cursor-pointer hover:text-darkOrange">Home</Link>
                             <Link to="/headphones" className="hover:cursor-pointer hover:text-darkOrange">Headphones</Link>
@@ -37,14 +37,14 @@ export default function Navbar() {
                             <Link to="/earphones" className="hover:cursor-pointer hover:text-darkOrange">Earphones</Link>
                         </ul>
                     </div>
-                    <button onClick={toggleCartBox} className="md:flex-1 flex justify-end">
+                    <button onClick={toggleCartBox} className="flex justify-end md:flex-1">
                         <img src={cart} alt="cart"  />
                         {/*<CartBox/>*/}
                     </button>
                 </div>
                 {/* Mobile Menu */}
                 {isOpen && (
-                    <div className="xl:hidden fixed w-full  z-10">
+                    <div className="fixed z-10 w-full xl:hidden">
                         <ul className="flex flex-col space-y-4 text-trueWhite font-manropeBold uppercase  bg-matteBlack text-[16px] bg-opacity-50 backdrop-blur-sm p-4">
                             <Link to="/" className="hover:cursor-pointer hover:text-darkOrange" onClick={closeNavbar}>Home</Link>
                             <Link to="/headphones" className="hover:cursor-pointer hover:text-darkOrange" onClick={closeNavbar}>Headphones</Link>

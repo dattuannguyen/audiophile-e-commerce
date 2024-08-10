@@ -44,12 +44,12 @@ const CheckoutPage = () => {
                             <button className="my-[16px] font-manropeMedium font-[15px] opacity-[50%] " onClick={() => window.history.back()}>Go Back</button>
                         </div>
                         <div className="grid grid-cols-1  xl:grid-cols-3 xl:gap-[30px] gap-y-7  ">
-                            <div className="checkout bg-white col-span-2 h-fit ">
+                            <div className="col-span-2 bg-white checkout h-fit ">
                                 <div className="mx-[24px] py-[54px]">
                                     <h1 className="font-manropeBold text-[18px] md:text-[32px] uppercase tracking-[1.14px]">Checkout</h1>
                                     <div className="billing ">
                                         <p className="pt-[41px] pb-[16px]  font-manropeBold text-lightOrange uppercase tracking-[0.93px]">Billing Details</p>
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                                             <div>
                                                 <Form.Root className="w-full">
                                                     <Form.Field className="grid mb-[10px]" name="email">
@@ -207,7 +207,7 @@ const CheckoutPage = () => {
                                     </div>
                                     <div className="payment">
                                         <p className="pt-[41px] pb-[16px] font-manropeBold text-lightOrange uppercase tracking-[0.93px]">Payment Details</p>
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                                             <p className="mb-[17px] font-manropeBold text-[12px]">Payment Method</p>
                                             <div>
                                                 <RadioGroup.Root className="space-y-4" defaultValue="" aria-label="Payment Method"  >
@@ -218,7 +218,7 @@ const CheckoutPage = () => {
                                                         onClick={handleENumber}
                                                     >
                                                         <div className="flex items-center">
-                                                            <div className="w-4 h-4 border border-gray-300 rounded-full flex items-center justify-center mr-4">
+                                                            <div className="flex items-center justify-center w-4 h-4 mr-4 border border-gray-300 rounded-full">
                                                                 <RadioGroup.Indicator className="w-2 h-2 bg-orange-500 rounded-full" />
                                                             </div>
                                                             <span className="ml-[16px] font-manropeBold tracking-[-0.25px] text-[14px]">e-Money</span>
@@ -232,7 +232,7 @@ const CheckoutPage = () => {
                                                         onClick={handleCash}
                                                     >
                                                         <div className="flex items-center">
-                                                            <div className="w-4 h-4 border border-gray-300 rounded-full flex items-center justify-center mr-4">
+                                                            <div className="flex items-center justify-center w-4 h-4 mr-4 border border-gray-300 rounded-full">
                                                                 <RadioGroup.Indicator className="w-2 h-2 bg-orange-500 rounded-full" />
                                                             </div>
                                                             <span className="ml-[16px] font-manropeBold tracking-[-0.25px] text-[14px]">Cash on Delivery</span>
@@ -244,7 +244,7 @@ const CheckoutPage = () => {
 
                                         {eleNumber === true
                                             &&
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                            <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                                                 <div>
                                                     <Form.Root className="w-full">
                                                         <Form.Field className="grid mb-[10px]" name="e-number">
@@ -292,7 +292,7 @@ const CheckoutPage = () => {
                                         }
                                         {cashOn === true
                                             &&
-                                            <div className="flex gap-5 pt-7 items-center">
+                                            <div className="flex items-center gap-5 pt-7">
                                                 <img src={cashOnImg} alt="cash-on-img"/>
                                                 <p className="font-manropeMedium text-[15px] leading-[25px]">
                                                     The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.
@@ -314,7 +314,7 @@ const CheckoutPage = () => {
                                                     <div>
                                                         <img src={item.imageCart} alt="" className="w-16 h-16"/>
                                                     </div>
-                                                    <div className="flex flex-1 flex-col pl-4">
+                                                    <div className="flex flex-col flex-1 pl-4">
                                                         <p className="font-manropeBold uppercase font-[15px] ">{item.cartName}</p>
                                                         <p className="font-manropeBold font-[14px] opacity-50">{formatPrice(item.price)}</p>
                                                     </div>
@@ -323,31 +323,31 @@ const CheckoutPage = () => {
                                             ))}
                                         </ul>
                                     </div>
-                                    <div className="flex justify-between items-center mb-1">
+                                    <div className="flex items-center justify-between mb-1">
                                         <p className="font-manropeMedium uppercase opacity-50 text-[15px]">Total</p>
                                         <p className="font-manropeBold text-[18px] tracking-[1.29px]">
                                             {formatPrice(totalPrice)}
                                         </p>
                                     </div>
-                                    <div className="flex justify-between items-center mb-1">
+                                    <div className="flex items-center justify-between mb-1">
                                         <p className="font-manropeMedium uppercase opacity-50 text-[15px]">Shipping</p>
                                         <p className="font-manropeBold text-[18px] tracking-[1.29px]">
                                             {formatPrice(shippingPrice)}
                                         </p>
                                     </div>
-                                    <div className="flex justify-between items-center mb-5">
+                                    <div className="flex items-center justify-between mb-5">
                                         <p className="font-manropeMedium uppercase opacity-50 text-[15px]">VAT (Included)</p>
                                         <p className="font-manropeBold text-[18px] tracking-[1.29px]">
                                             {formatPrice(vatAmount)}
                                         </p>
                                     </div>
-                                    <div className="flex justify-between items-center mb-5">
+                                    <div className="flex items-center justify-between mb-5">
                                         <p className="font-manropeMedium uppercase opacity-50 text-[15px]">Grand Total</p>
                                         <p className="font-manropeBold text-[18px] tracking-[1.29px] text-darkOrange ">
                                             {formatPrice(grandTotal)}
                                         </p>
                                     </div>
-                                    <button  onClick={openConfirmBox}  className="btn1 w-full">Continue & Pay</button>
+                                    <button  onClick={openConfirmBox}  className="w-full btn1">Continue & Pay</button>
                                 </div>
                             </div>
                         </div>

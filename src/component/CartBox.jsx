@@ -33,7 +33,7 @@ const CartBox = () => {
                         <div>
                             <img src={item.imageCart} alt="" className="w-16 h-16"/>
                         </div>
-                        <div className="flex flex-1 flex-col pl-4">
+                        <div className="flex flex-col flex-1 pl-4">
                             <p className="font-manropeBold uppercase font-[15px] ">{item.cartName}</p>
                             <p className="font-manropeBold font-[14px] opacity-50">{formatPrice(item.price)}</p>
                         </div>
@@ -51,7 +51,7 @@ const CartBox = () => {
                     {formatPrice(cartItems.reduce((total, item) => total + item.price * item.quantity, 0))}
                 </p>
             </div>
-            <Link to="/checkout" className="btn1 w-full " onClick={closeCartBox}>Checkout</Link>
+            <Link to="/checkout" className="w-full btn1 " onClick={closeCartBox}>Checkout</Link>
         </div>
     );
 };
